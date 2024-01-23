@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.css'
+import { Link } from 'react-router-dom';
 
 import Planet from '../../assets/3d-planet.webp';
 import Awareness from '../../assets/awareness.svg';
@@ -20,14 +21,14 @@ import Footer from '../../components/footer/Footer';
 
 function Home() {
   return (
-    <>
+    
     <body>
 
     <main className="hero-section">
         <div className="d-flex">
             <img src={LogoTipo} alt="Logomarca da Natureza Conectada. Ilustração de uma folha e ao lado direito escrito: Natureza Conectada" />
             <p>Conectando pessoas à natureza, uma semente por vez.</p>
-            <a className="btn-cta hero-section-button" role="button" aria-label="Botão de chamada para cadastrar na plataforma" href="./pages/login.html">Cadastre-se</a>
+            <Link to="/signup">  <a className="btn-cta hero-section-button" role="button" aria-label="Botão de chamada para cadastrar na plataforma" href="">Cadastre-se</a> </Link> 
             <img src={Arrow} alt="Seta mostrando que a landing page contem mais conteúdo para baixo" className="arrow-scroll" />
         </div>
     </main>
@@ -123,8 +124,7 @@ function Home() {
 
 
 </body>
-< Footer />
-</>
+
   );
 }
 
