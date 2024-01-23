@@ -4,7 +4,7 @@ padding: 1rem 0;
   a{
     text-decoration: none;
     color: #fff;
-    margin-right: 2rem;
+    margin-left: 2rem;
     transition: color .2s;
   }
   > div{
@@ -30,4 +30,19 @@ padding: 1rem 0;
     color: #fff;
   }
 
+}
+
+@media (max-width: 1200px){
+  .container-menu > div{
+margin: 0 1.2rem
+  }
+}
+
+@media (max-width: 450px){
+  .container-menu a{
+    margin-left: 1rem;
+  }
+  .containerLogo img{
+    width: 2rem;
+  }
 }

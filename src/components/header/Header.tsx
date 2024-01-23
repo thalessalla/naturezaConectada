@@ -19,7 +19,7 @@ const Menu = () => {
       <div>
 
 <div className='containerLogo'>
-<img src={logo} alt="Logo da Minha Empresa" />
+<Link to="/"> <img src={logo} alt="Logo da Minha Empresa" /> </Link> 
 </div>
       
       <div className='container-links-menu'>
