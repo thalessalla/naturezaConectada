@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --font-family-heading: "Ubuntu", sans-serif;
+  --font-family-text: "Roboto Flex", sans-serif;
+  --bg-color: #F2FEEC;
+  --primary-color: #5AB134;
+  --secondary-color: #BCF4CA;
+  --accent-color: #2DDA8F;
+  --text-color: #0A1801;
+}
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-family-heading);
+}
+
+p {
+  font-family: var(--font-family-text);
+}
+
+.btn-cta {
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  padding: 0.5rem 1.3rem;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  border-radius: 0.3rem;
+}
+
+.btn-cta:hover {
+  background-color: #234b0a;
+  color: var(--secondary-color);
+}
