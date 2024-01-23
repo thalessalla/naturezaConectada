@@ -13,12 +13,14 @@ import Leaves from '../../assets/leaves.webp';
 import Plant from '../../assets/plant.png';
 import LogoTipo from '../../assets/logomarca.svg';
 import Arrow from '../../assets/seta.svg';
+import Footer from '../../components/footer/Footer';
 
 
 
 
 function Home() {
   return (
+    <>
     <body>
 
     <main className="hero-section">
@@ -58,20 +60,20 @@ function Home() {
                 <div className="d-flex">
                     <div className="d-flex align-items-center gap-4">
                         <div>
-                            <p className="percent-earth">46%</p>
+                            <p className="percent-earth">58%</p>
                         </div>
                         <div>
-                            <p>das emissões de gases de efeito estufa no Brasil são provenientes de desmatamento e
+                            <p>das emissões de <a href="http://www.inpe.br/faq/index.php?pai=9#:~:text=No%20Brasil%2C%2058%25%20das%20emiss%C3%B5es,provenientes%20de%20queimadas%20e%20desmatamento." target="_blank" rel="noreferrer">gases de efeito estufa no Brasil</a>  são provenientes de desmatamento e
                                 queimadas.
                             </p>
                         </div>
                     </div>
                     <div className="d-flex align-items-center gap-4">
                         <div>
-                            <p className="percent-earth">12%</p>
+                            <p className="percent-earth">85%</p>
                         </div>
                         <div>
-                            <p>do semiárido brasileiro já está em processo de desertificação.</p>
+                            <p>do <a href="https://www.gov.br/insa/pt-br/semiarido-brasileiro" target="_blank" rel="noreferrer">semiárido brasileiro</a> já está em processo de desertificação.</p>
                         </div>
                     </div>
                     <div className="d-flex align-items-center gap-4">
@@ -79,7 +81,7 @@ function Home() {
                             <p className="percent-earth">90%</p>
                         </div>
                         <div>
-                            <p>das doenças atribuíveis às mudanças climáticas afetam crianças menores de 5 anos.</p>
+                            <p>das doenças atribuíveis às <a href="https://www.unicef.org/brazil/meio-ambiente-e-mudancas-climaticas#:~:text=Quase%2090%25%20do%20peso%20de,de%205%20anos%20de%20idade." target="_blank" rel="noreferrer">mudanças climáticas</a>  afetam crianças menores de 5 anos.</p>
                         </div>
                     </div>
                 </div>
@@ -121,6 +123,8 @@ function Home() {
 
 
 </body>
+< Footer />
+</>
   );
 }
 

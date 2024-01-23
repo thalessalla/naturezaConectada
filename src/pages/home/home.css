@@ -36,8 +36,8 @@ main.hero-section .hero-section-button {
 section.about-section {
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100vh;
 }
+
 section.about-section div {
   align-items: center;
   justify-content: space-between;
@@ -129,6 +129,10 @@ section.working p {
   margin-bottom: 1rem;
 }
 
+.container-txt-earth h2{
+  margin-top: 6rem;
+}
+
 @keyframes moveUpDown {
   0% {
     transform: translateY(10rem);
@@ -203,7 +207,7 @@ section.working p {
     margin: 0 2rem;
   }
   section.technologies img {
-    width: 20rem;
+    width: 18rem;
     margin-left: 2rem;
   }
   section.working {
@@ -215,6 +219,18 @@ section.working p {
   }
   section.working ul {
     padding: 1.2rem;
+  }
+  section.about-section .container-text-about{
+    width: 100%;
+  }
+  .earth .item-1-earth p {
+    max-width: 100%;
+  }
+  .earth .percent-earth{
+    font-size: 3rem;
+  }
+  .container-txt-earth h2{
+    margin-top: 3rem;
   }
 }
 

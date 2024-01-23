@@ -10,6 +10,7 @@ import Signup from './pages/signup/Signup';
 import LandingPage from './pages/landingPage/LandingPage';
 
 
+
 function App() {
   return (
  
@@ -21,7 +22,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
- 
+
   );
 }
 
