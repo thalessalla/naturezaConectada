@@ -1,3 +1,34 @@
+<div align="center">
+
+
+### Task 01 - Parte 1: Landing Page em React - Squad 5 <hr>
+
+Natureza Conectada
+
+
+<img align="center"  src="./src/assets/logo.png" alt="Logotipo da aplicação Natureza Conectada"><br>
+
+Conectando pessoas à natureza, uma semente por vez.
+
+</div>
+  
+***
+
+### Desenvolvido Por:
+
+ #### Camila Gonçalves <br> 
+  [Linkedin](https://www.linkedin.com/in/camilanpgoncalves/) | [Github](https://github.com/CamilaVerso)
+  <br>
+
+   #### Thales Salla <br> 
+  [Linkedin](https://www.linkedin.com/in/thales-salla/) | [Github](https://github.com/thalessalla)
+  <br>
+  <hr>
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
