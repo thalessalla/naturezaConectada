@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -57,4 +58,14 @@ p {
 .btn-cta:hover {
   background-color: #234b0a;
   color: var(--secondary-color);
+}
+
+.d-flex{
+  display: flex;
+}
+.gap-4{
+  gap: 2rem;
+}
+h2{
+  margin-bottom: 2rem;
 }

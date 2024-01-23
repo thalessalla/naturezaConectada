@@ -1,6 +1,6 @@
 main.hero-section {
   min-height: 100vh;
-  /* background-image: url("../../assets/bg-hero-section.webp"); */
+  background-image: url("../../assets/bg-hero-section.webp");
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +13,9 @@ main.hero-section div {
   flex-direction: column;
   align-items: center;
 }
+
+
+
 main.hero-section p {
   color: var(--bg-color);
   font-size: 1.2rem;
