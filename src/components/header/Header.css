@@ -1,0 +1,33 @@
+.container-menu{
+  background-color: #0A1801;
+padding: 1rem 0;
+  a{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 2rem;
+    transition: color .2s;
+  }
+  > div{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  a:hover{
+    color: #5AB134;
+  }
+}
+
+
+
+.container-links-menu{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+}
