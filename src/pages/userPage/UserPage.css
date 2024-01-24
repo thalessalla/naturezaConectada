@@ -1,0 +1,180 @@
+
+main > section {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.card-usuario {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 4rem 2rem;
+  border-radius: 0.3rem;
+  border-top: 2px solid #eeeeee;
+  border-left: 2px solid #eeeeee;
+  background: #f9fcf9;
+  box-shadow: 3px 8px 10.1px 0px rgba(0, 0, 0, 0.079);
+  width: 100%;
+}
+.card-usuario h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  border-bottom: solid 2px var(--primary-color);
+  padding-bottom: 1rem;
+  padding-right: 4rem;
+}
+.card-usuario p {
+  color: #787878;
+  font-weight: 600;
+  font-size: 1.2rem;
+  max-width: 45ch;
+
+}
+
+
+.container-cards-benefits{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+
+
+
+.cards-benefits {
+  display: flex;
+  flex-direction: column;
+}
+.cards-benefits h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 5rem;
+}
+.cards-benefits .card-body h4 {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.cards-benefits .card-body p {
+  color: #3D3E3C;
+  line-height: 1.4rem;
+  /* font-weight: 600; */
+}
+.cards-benefits .card {
+  max-height: 19rem;
+  padding: 1rem;
+  padding-left: 3rem;
+  border-radius: 0.3rem;
+  border-top: 2px solid #eeeeee;
+  border-left: 2px solid #eeeeee;
+  background: #f9fcf9 !important;
+  box-shadow: 3px 8px 10.1px 0px rgba(0, 0, 0, 0.079);
+  width: 20rem;
+  min-height: 19rem;
+}
+.cards-benefits .card:last-child {
+  margin-bottom: 3rem;
+}
+
+.ask-for-seed {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: fit-content;
+  margin-bottom: 5rem;
+}
+.ask-for-seed h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.ask-for-seed .button-ask {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--bg-color);
+}
+
+.title-relative {
+  position: relative;
+}
+
+.air-quality::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  left: -2.2rem;
+  background: url("../../assets/Cloud.svg");
+}
+
+.biodiversity::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  left: -2.2rem;
+  background-image: url("../../assets/biodiversidade.svg");
+}
+
+.climatic-changes::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  left: -2.2rem;
+  background: url("../../assets/climatica.svg");
+}
+
+.awareness::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  left: -2.2rem;
+  background: url("../../assets/awareness.svg");
+}
+
+.comunity::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  left: -2.2rem;
+  background-image: url("../../assets/comunidade.svg");
+}
+
+.button-ask:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+footer .links {
+  visibility: hidden;
+}
+
+@media (max-width: 775px) {
+  .card-usuario img {
+    width: 18rem;
+  }
+  .cards-benefits {
+    display: flex;
+    flex-direction: column;
+  }
+  .cards-benefits h2 {
+    margin-inline: 2rem;
+  }
+  .ask-for-seed {
+    flex-wrap: wrap;
+  }
+  .ask-for-seed img {
+    margin: 3rem 0 0 3rem;
+  }
+  footer .links {
+    display: none;
+  }
+}
+

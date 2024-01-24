@@ -1,7 +1,72 @@
-.container-login{
-  height: 100vh;
+
+
+section{
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+.container-login{
+  display: flex;
+ height: 500px;
+ width: 800px;
+}
+
+h1{
+  color: #fff;
+}
+h2{
+  color: var(--primary-color);
+}
+.first-column-login{
+  background-image: url("../../assets/nature-login.webp");
+  height: 100%;
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+  padding: 34px;
+  display: flex;
+  align-items: center;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+.second-column-login{
+  background-color: #fff;
+  width: 100%;
+  border-radius: 0 8px 8px 0;
+ padding: 34px;
+ align-items: center;
+}
+
+.second-column-login{
+  display: flex;
+  align-items: center;
+}
+
+.second-column-login form{
+display: flex;
+flex-direction: column;
+color: #72776F;
+width: 100%;
+p{
+  margin-top: 2rem;
+}
+}
+
+button{
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: .4rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.link-signup{
+  color: #72776F;
+  font-weight: 600;
+}

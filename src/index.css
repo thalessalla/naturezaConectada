@@ -54,7 +54,6 @@ p {
   font-weight: 600;
   transition: background-color 0.3s;
   border-radius: 0.3rem;
-  margin-top: 200px !important;
 }
 
 .btn-cta:hover {
@@ -77,4 +76,8 @@ h2{
 .align-items-center{
   align-items: center;
 }
+
+/* /////// Modulos Input ///////// */
+
+
 
