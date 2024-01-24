@@ -17,9 +17,9 @@ code {
   --font-family-heading: "Ubuntu", sans-serif;
   --font-family-text: "Roboto Flex", sans-serif;
   --bg-color: #F2FEEC;
-  --primary-color: #5AB134;
+  --primary-color: #226405;
   --secondary-color: #BCF4CA;
-  --accent-color: #2DDA8F;
+  --accent-color: #5AB134;
   --text-color: #0A1801;
 }
 
@@ -48,12 +48,13 @@ p {
 
 .btn-cta {
   color: var(--text-color);
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
   padding: 0.5rem 1.3rem;
   text-align: center;
   font-weight: 600;
   transition: background-color 0.3s;
   border-radius: 0.3rem;
+  margin-top: 200px !important;
 }
 
 .btn-cta:hover {

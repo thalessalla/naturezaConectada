@@ -28,8 +28,10 @@ function Home() {
         <div className="d-flex">
             <img src={LogoTipo} alt="Logomarca da Natureza Conectada. Ilustração de uma folha e ao lado direito escrito: Natureza Conectada" />
             <p>Conectando pessoas à natureza, uma semente por vez.</p>
-            <Link to="/signup">  <a className="btn-cta hero-section-button" role="button" aria-label="Botão de chamada para cadastrar na plataforma" href="">Cadastre-se</a> </Link> 
-            <img src={Arrow} alt="Seta mostrando que a landing page contem mais conteúdo para baixo" className="arrow-scroll" />
+            <Link to="/signup" aria-label="Botão cadastre-se">
+  <a className="btn-cta hero-section-button" href="">Cadastre-se</a>
+</Link>
+            <img src={Arrow} alt="Seta mostrando que a landing page contem mais conteúdo para baixo" className="arrow-scroll" loading="lazy" />
         </div>
     </main>
 
@@ -51,7 +53,7 @@ function Home() {
     <section className="earth">
         <div className="d-flex">
             <div className="item-1-earth">
-                <img src={Planet} alt="Ilustração 3d do planeta terra" />
+                <img src={Planet} alt="Ilustração 3d do planeta terra" loading="lazy"/>
                 <p>A falta de áreas verdes afeta a qualidade de vida urbana, saúde mental e física, bem como a
                     biodiversidade. A solução requer políticas urbanas integradas e campanhas de conscientização para
                     engajar a comunidade.</p>
@@ -91,7 +93,7 @@ function Home() {
     </section>
 
     <section className="technologies" id="techs-section">
-        <img src={Laptop} alt="Figura de um laptop com ilustrações de folhas e engrenagens em sua tela, em tons de verde" />
+        <img src={Laptop} alt="Figura de um laptop com ilustrações de folhas e engrenagens em sua tela, em tons de verde" loading="lazy" />
         <div>
             <h2>Tecnologia como ferramenta</h2>
             <p>
@@ -103,7 +105,7 @@ function Home() {
     </section>
 
     <section className="working" id="working-section">
-        <img src={Leaves} alt="Figura de três folhas verdes" />
+        <img src={Leaves} alt="Figura de três folhas verdes" loading="lazy" />
         <div>
             <h2>Funcionamento da plataforma</h2>
             <ul>
