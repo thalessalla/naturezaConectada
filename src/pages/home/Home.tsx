@@ -12,8 +12,6 @@ import Arrow from '../../assets/seta.svg';
 import Footer from '../../components/footer/Footer';
 
 
-
-
 function Home() {
   return (
     
