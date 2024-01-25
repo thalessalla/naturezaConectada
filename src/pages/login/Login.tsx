@@ -11,30 +11,6 @@ function Login() {
 
 
 
-
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSenhaChange = (e) => {
-    setSenha(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Aqui você pode realizar a lógica de submissão do formulário
-    console.log('Email:', email);
-    console.log('Senha:', senha);
-  };
-
-
-
-
-
   return (
     <section>
     <div className="container-login">
@@ -56,16 +32,14 @@ function Login() {
         text="E-mail"
         name="email"
         placeholder="exemplo@email.com"
-        handleChange={handleEmailChange}
-        value={email}
+        value=""
       />
 
       <Input
         type="password"  
         text="Senha"
         name="senha"
-        handleChange={handleSenhaChange}
-        value={senha}
+        value=""
       />
    
 
