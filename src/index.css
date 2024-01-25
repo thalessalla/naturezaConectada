@@ -54,7 +54,6 @@ p {
   font-weight: 600;
   transition: background-color 0.3s;
   border-radius: 0.3rem;
-  margin-top: 200px !important;
 }
 
 .btn-cta:hover {
@@ -78,3 +77,40 @@ h2{
   align-items: center;
 }
 
+/* /////// Modulos Input ///////// */
+
+
+
+.input-component{
+  display: flex;
+  flex-direction: column;
+margin-top: .8rem;
+width: 100%;
+  input{
+    border-radius: 4px;
+    border: solid 1px #E0E0E0;
+    padding: 4px 0;
+    margin-top: .3rem;
+  }
+}
+
+ input:focus{
+  border: solid 1px var(--accent-color);
+  outline: none;
+}
+
+.input-component ::placeholder{
+  color: #d5d6d5;
+  padding-left: .6rem;
+}
+
+
+.btn-submite{
+  padding: .4rem 2rem;
+  transition: background-color .3s;
+  background-color: var(--primary-color);
+}
+
+.btn-submite:hover{
+  background-color: var(--accent-color);
+}

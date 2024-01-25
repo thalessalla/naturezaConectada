@@ -3,11 +3,6 @@ import './home.css'
 import { Link } from 'react-router-dom';
 
 import Planet from '../../assets/3d-planet.webp';
-import Awareness from '../../assets/awareness.svg';
-import Biodiversidade from '../../assets/biodiversidade.svg';
-import Climatica from '../../assets/climatica.svg';
-import Cloud from '../../assets/Cloud.svg';
-import Comunidade from '../../assets/comunidade.svg';
 import Ecology from '../../assets/ecology-hand.webp';
 import Laptop from '../../assets/laptop.webp';
 import Leaves from '../../assets/leaves.webp';

@@ -1,7 +1,102 @@
-.container-login{
-  height: 100vh;
+
+
+section{
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+.container-login{
+  display: flex;
+ height: 500px;
+ width: 800px;
+ min-width: 500px;
+ padding: 0 1.2rem;
+ filter: drop-shadow(3px 8px 10.1px rgba(0, 0, 0, 0.25));
+}
+
+h1{
+  color: #fff;
+}
+h2{
+  color: var(--primary-color);
+}
+.first-column-login{
+  background-image: url("../../assets/nature-login.webp");
+  height: 100%;
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+  padding: 34px;
+  display: flex;
+  align-items: center;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+.second-column-login{
+  background-color: #F9FCF9;
+  width: 100%;
+  border-radius: 0 8px 8px 0;
+ padding: 34px;
+ align-items: center;
+}
+
+.second-column-login{
+  display: flex;
+  align-items: center;
+}
+
+.second-column-login form{
+display: flex;
+flex-direction: column;
+color: #72776F;
+width: 100%;
+p{
+  margin-top: 2rem;
+}
+}
+
+button{
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: .4rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.link-signup{
+  color: #72776F;
+  font-weight: 600;
+}
+
+.btn-submite{
+  width: 100%;
+}
+
+@media (max-width: 500px){
+  .container-login{
+    flex-direction: column;
+  }
+.container-login{
+  min-width: 100%;
+
+}
+.first-column-login{
+  border-radius: 8px 8px 0 0;
+}
+.second-column-login{
+  border-radius: 0 0 8px 8px ;
+  padding: 15px;
+}
+h2{
+  margin-bottom: 1rem;
+}
+h1{
+  font-size: 2rem;
+}
+}

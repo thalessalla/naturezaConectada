@@ -6,7 +6,9 @@ interface SubmitButtonProps {
 function SubmitButton({ text, onClick }: SubmitButtonProps) {
   return(
     <div>
+
       <button className='btn-cta' onClick={onClick}>{text}</button>
+
     </div>
   )
 }
