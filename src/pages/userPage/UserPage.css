@@ -27,7 +27,7 @@ main > section {
   padding-right: 4rem;
 }
 .card-usuario p {
-  color: #787878;
+  color: var(--text-color);
   font-weight: 600;
   font-size: 1.2rem;
   max-width: 45ch;
@@ -53,7 +53,7 @@ main > section {
   color: var(--primary-color);
   margin-bottom: 5rem;
 }
-.cards-benefits .card-body h4 {
+.cards-benefits .card-body h3 {
   color: var(--primary-color);
   font-size: 1.6rem;
   margin-bottom: 1rem;
