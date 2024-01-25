@@ -1,7 +1,7 @@
 <div align="center">
 
 
-### Task 01 - Parte 1: Landing Page em React - Squad 5 <hr>
+### Landing Page em React - Squad 5 <hr>
 
 Natureza Conectada
 
@@ -13,21 +13,65 @@ Conectando pessoas à natureza, uma semente por vez.
 </div>
   
 ***
+<div align="center">
 
 ### Desenvolvido Por:
 
  #### Camila Gonçalves <br> 
   [Linkedin](https://www.linkedin.com/in/camilanpgoncalves/) | [Github](https://github.com/CamilaVerso)
-  <br>
-
+ 
    #### Thales Salla <br> 
   [Linkedin](https://www.linkedin.com/in/thales-salla/) | [Github](https://github.com/thalessalla)
   <br>
   <hr>
+</div>
 
+# Informações Importantes 
 
+## Banco de Dados 
 
+Estamos utilizando o *json-server* portanto para que seja possível testar o formulário de cadastro e *login* se faz necessário rodar o comando `npm run backend`
 
+## Rotas 
+
+Ao se cadastrar ou efetuar o login, o usuário ainda não é direcionado para a *Userpage* (página de usuário), porq ue ainda não aprendemos sobre rotas privadas. Porém, o usuário recebe uma confirmação visual através de um alerta (*alert*).
+
+## Responsividade
+
+Todas as páginas são responsivas. 
+Para acessar a *userpage* se faz necessário realizar a rota manualmente através da barra do navegador ou [cliando aqui.](https://natureza-conectada-cup7.vercel.app/userpage)
+
+## Dados Lighthouse
+
+Para alcançar os resultados reais, se faz necessário realizar o uso da ferramenta *Lighthouse* em **aba anônima**, abaixo os resultados alcançados:
+<br>
+
+*Landing Page*:
+
+<img src="./src/assets/LP.webp">
+<br>
+<br>
+
+*Login*
+
+<img src="./src/assets/login.webp">
+<br>
+<br>
+
+*Signup*
+
+<img src="./src/assets/signup.webp">
+<br>
+<br>
+
+*Userpage*
+
+<img src="./src/assets/userpage.webp">
+<br>
+<br>
+<hr>
+<hr>
+<hr>
 
 # Getting Started with Create React App
 

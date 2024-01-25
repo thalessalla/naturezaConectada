@@ -29,21 +29,6 @@ interface UserFormData {
   complemento?: string;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const schema = yup.object().shape({
   username: yup.string().required('Nome do usuário é obrigatório'),
   password: yup
@@ -57,7 +42,7 @@ const schema = yup.object().shape({
   cep: yup.string()
     .matches(/^\d{8}$/, 'CEP inválido') 
     .required('Campo obrigatório'),
-  cidade: yup.string().required('Nome da Cidade é obrigatório'),
+  cidade: yup.string().matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/, 'Digite um nome de cidade válido').required('Nome da Cidade é obrigatório'),
   rua: yup.string().required('Campo de rua é obrigatório'),
   numero: yup.number().required('Campo de número da casa é obrigatório'),
   complemento: yup.string(),
@@ -66,7 +51,6 @@ const schema = yup.object().shape({
 
 const Register = () => {
 
- 
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<UserFormData>({
     resolver: yupResolver(schema),
@@ -98,8 +82,6 @@ const Register = () => {
     }
   };
 
-
-
   return (
     <div className="screen-signup">
   <h1>Cadastre-se</h1>
@@ -115,20 +97,17 @@ const Register = () => {
           {errors.username && <span>Insira o nome completo</span>}
             </div>
           
-
 <div>
   <label>E-mail</label>
           <input type="email" aria-label="Insira o seu e-mail" placeholder="exemplo@exemplo.com" {...register('email', { required: true })} />
           {errors.email && <span>Campo obrigatório</span>}
 </div>
           
-
 <div>
   <label>CPF</label>
           <input type="text" placeholder="00000000000" aria-label="Insira seu CPF sem traços ou pontos" {...register('cpf', { required: true })} />
           {errors.cpf && <span>Campo obrigatório</span>}
-</div>
-            
+</div>            
         
         <div>
           <label>Senha</label>
@@ -146,8 +125,6 @@ const Register = () => {
 
 <div>
          
-
-
 <div>
 <label>Cep</label>
           <input type="text" placeholder="00000000" aria-label="Insira o Cep de onde você mora" {...register('cep', { required: true })} />
@@ -157,7 +134,7 @@ const Register = () => {
        <div>
        <label>Cidade</label>
           <input type="text" aria-label="Insira a cidade a onde você reside" {...register('cidade', { required: true })} />
-          {errors.cidade && <span>Campo obrigatório</span>}
+          {errors.cidade && <span>Digite um nome de cidade válido</span>}
        </div>
 
           

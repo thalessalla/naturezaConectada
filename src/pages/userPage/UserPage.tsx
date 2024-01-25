@@ -26,7 +26,7 @@ function UserPage() {
         <div className="container-cards-benefits">
             <div className="card">
                 <div className="card-body">
-                    <h4 className="title-relative  air-quality">Melhoria da Qualidade do Ar</h4>
+                    <h3 className="title-relative  air-quality">Melhoria da Qualidade do Ar</h3>
                     <p className="card-text">O aumento da cobertura vegetal contribui para a filtragem de poluentes do
                         ar,
                         melhorando a qualidade do ar nas áreas urbanas.</p>
@@ -35,29 +35,29 @@ function UserPage() {
 
             <div className="card">
                 <div className="card-body">
-                    <h4 className=" title-relative 
-                    biodiversity">Incentivo à Biodiversidade</h4>
+                    <h3 className=" title-relative 
+                    biodiversity">Incentivo à Biodiversidade</h3>
                     <p className="card-text">O plantio de espécies nativas contribui para a preservação da biodiversidade, ajudando na conservação de flora e fauna locais.</p>
                 </div>
             </div>
 
             <div className="card">
                 <div className="card-body">
-                    <h4 className=" climatic-changes title-relative">Redução das Mudanças Climáticas</h4>
+                    <h3 className=" climatic-changes title-relative">Redução das Mudanças Climáticas</h3>
                     <p className="card-text">O reflorestamento urbano ajuda na captura de carbono, reduzindo a pegada de carbono e contribuindo para a mitigação das mudanças climáticas.</p>
                 </div>
             </div>
 
             <div className="card">
                 <div className="card-body">
-                    <h4 className=" awareness title-relative">Estímulo à Conscientização Ambiental</h4>
+                    <h3 className=" awareness title-relative">Estímulo à Conscientização Ambiental</h3>
                     <p className="card-text">O projeto pode aumentar a conscientização sobre questões ambientais, incentivando práticas sustentáveis e responsáveis na comunidade.</p>
                 </div>
             </div>
 
             <div className="card">
                 <div className="card-body">
-                    <h4 className=" comunity title-relative">Bem-Estar da Comunidade</h4>
+                    <h3 className=" comunity title-relative">Bem-Estar da Comunidade</h3>
                     <p className="card-text">Áreas verdes têm impactos positivos na saúde mental e física, promovendo o bem-estar e reduzindo o estresse.</p>
                 </div>
             </div>
@@ -67,7 +67,7 @@ function UserPage() {
     <section className="ask-for-seed" id="pedido">
         <div>
             <h2>Pedir sua semente</h2>
-            <button className="btn-cta button-ask" role="button" disabled aria-label="Botão de chamada para pedir uma semente">Pedir
+            <button className="btn-cta button-ask" disabled aria-label="Botão de chamada para pedir uma semente">Pedir
             </button>
         </div>
         <img src={Plant} alt="Figura de uma planta de decoração em um jarro" />
