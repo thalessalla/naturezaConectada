@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Fulano de Tal",
+      "email": "fulano@example.com",
+      "CPF": "123.456.789-01",
+      "password": "senha123",
+      "cep": "12345-678",
+      "cidade": "Cidade A",
+      "rua": "Rua Principal",
+      "numero": 123,
+      "complemento": "Apartamento 4"
+    },
+    {
+      "id": "2",
+      "name": "Ciclano Silva",
+      "email": "ciclano@example.com",
+      "CPF": "987.654.321-09",
+      "password": "outrasenha",
+      "cep": "54321-876",
+      "cidade": "Cidade B",
+      "rua": "Rua Secundária",
+      "numero": 456,
+      "complemento": "Casa Azul"
+    },
+    {
+      "id": "eac5",
+      "username": "Camila",
+      "password": "123"
+    },
+    {
+      "id": "4668",
+      "complemento": "",
+      "numero": 12,
+      "rua": "Azul",
+      "cidade": "Itapevi",
+      "cep": "06654-730",
+      "cpf": "12365478963",
+      "email": "camila@camila.com",
+      "password": "a123",
+      "username": "Camila2"
+    }
+  ]
+}
