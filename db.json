@@ -88,6 +88,18 @@
       "email": "thales@thales.com",
       "password": "a123",
       "username": "Thales Salla"
+    },
+    {
+      "id": "4c8f",
+      "complemento": "",
+      "numero": 123,
+      "rua": "rua dos bobos",
+      "cidade": "Socorro",
+      "cep": "13960-000",
+      "cpf": "11111111112",
+      "email": "thales@thales.com.br",
+      "password": "a123",
+      "username": "Thales Salla"
     }
   ]
 }
