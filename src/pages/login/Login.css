@@ -35,6 +35,7 @@ h2{
 
 h1{
   font-size: 2.5rem;
+  color: #fff;
 }
 
 .second-column-login{
@@ -50,27 +51,30 @@ h1{
   align-items: center;
 }
 
-.second-column-login form{
+.second-column-login form div{
 display: flex;
 flex-direction: column;
-color: #72776F;
+color: #2a2a2a;
 width: 100%;
+margin-bottom: 2rem;
 p{
   margin-top: 2rem;
 }
 }
 
-button{
-  background-color: var(--accent-color);
+.second-column-login button{
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
   padding: .4rem;
   margin-top: 1rem;
   border-radius: 4px;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .link-signup{
-  color: #72776F;
+  color: #2a2a2a;
   font-weight: 600;
 }
 

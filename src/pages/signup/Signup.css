@@ -1,6 +1,78 @@
-/* .container-signup{
-  height: 100vh;
+.screen-signup{
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-} */
+}
+.screen-signup h1{
+  color: var(--primary-color);
+  margin: 1.4rem 0;
+}
+.screen-signup h2{
+  margin: 2rem 0;
+  color: #2a2a2a;
+}
+
+.container-signup{
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+padding: 20px;
+  margin: 0 auto;
+  background-color: #F9FCF9;
+  filter: drop-shadow(3px 8px 10.1px rgba(0, 0, 0, 0.25));
+  margin: 0 20px;
+  margin-bottom: 4rem;
+  border-radius: 8px;
+}
+
+.container-signup > div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.container-personal-data {
+margin-bottom: 2rem;
+}
+
+.container-signup > div div{
+  display: flex;
+  flex-direction: column;
+
+ input{
+  width: 350px;
+  min-width: 150px;
+ }
+}
+
+.btn-submite{
+  width: 225px;
+  display: block;
+}
+
+@media (max-width: 1170px){
+  .container-signup > div div{
+   input{
+    width: 200px;
+    min-width: 150px;
+   }
+  }
+}
+
+@media (max-width: 774px){
+  .container-signup > div div{
+    width: 100%;
+   input{
+    width: 100%;
+
+   }
+  }
+
+  .container-signup > div {
+     gap: .4rem; 
+}
+}
