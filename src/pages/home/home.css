@@ -80,7 +80,7 @@ section.about-section h2 {
   color: var(--bg-color);
 }
 .earth h2 {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 .earth .percent-earth {
   font-size: 4rem;
