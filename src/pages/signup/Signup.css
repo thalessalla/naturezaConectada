@@ -54,6 +54,11 @@ margin-bottom: 2rem;
   display: block;
 }
 
+form span{
+  color: #7C0A0A;
+  font-size: .8rem;
+}
+
 @media (max-width: 1170px){
   .container-signup > div div{
    input{
