@@ -61,7 +61,9 @@ const Register = () => {
     try {
       const response: AxiosResponse<UserRegistrationResponse> = await axios.post('http://localhost:3001/users', data);
       console.log('User registered with ID:', response.data.id);
-      alert('User cadastrado');
+      alert('User cadastrado\n\nBem-vindo à área do usuário');
+
+
 
       reset();
     } catch (error) {

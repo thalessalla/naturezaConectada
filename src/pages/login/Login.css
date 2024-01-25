@@ -62,7 +62,7 @@ p{
 }
 }
 
-.second-column-login button{
+ button{
   background-color: var(--primary-color);
   color: #fff;
   border: none;
@@ -71,6 +71,11 @@ p{
   border-radius: 4px;
   width: 100%;
   margin-bottom: 2rem;
+}
+
+.second-column-login button{
+  width: 100%;
+ 
 }
 
 .link-signup{

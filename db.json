@@ -52,6 +52,42 @@
       "email": "thales@thales.com",
       "password": "a123",
       "username": "Thales Salla"
+    },
+    {
+      "id": "57cc",
+      "complemento": "",
+      "numero": 123,
+      "rua": "rua dos bobos",
+      "cidade": "Socorro",
+      "cep": "13960-000",
+      "cpf": "11111111111",
+      "email": "thales@thales.com",
+      "password": "a123",
+      "username": "Thales Salla"
+    },
+    {
+      "id": "9ef9",
+      "complemento": "",
+      "numero": 123,
+      "rua": "rua dos bobos",
+      "cidade": "Socorro",
+      "cep": "13960-000",
+      "cpf": "11111111111",
+      "email": "thales@thales.com",
+      "password": "a123",
+      "username": "Thales Salla"
+    },
+    {
+      "id": "7f74",
+      "complemento": "",
+      "numero": 123,
+      "rua": "rua dos bobos",
+      "cidade": "help",
+      "cep": "13960-000",
+      "cpf": "11111111111",
+      "email": "thales@thales.com",
+      "password": "a123",
+      "username": "Thales Salla"
     }
   ]
 }
