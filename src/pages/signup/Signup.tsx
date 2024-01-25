@@ -29,6 +29,8 @@ interface UserFormData {
   complemento?: string;
 }
 
+
+
 const schema = yup.object().shape({
   username: yup.string().required('Nome do usuário é obrigatório'),
   password: yup
@@ -42,7 +44,7 @@ const schema = yup.object().shape({
   cep: yup.string()
     .matches(/^\d{8}$/, 'CEP inválido') 
     .required('Campo obrigatório'),
-  cidade: yup.string().matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/, 'Digite um nome de cidade válido').required('Nome da Cidade é obrigatório'),
+  cidade: yup.string().required('Nome da Cidade é obrigatório'),
   rua: yup.string().required('Campo de rua é obrigatório'),
   numero: yup.number().required('Campo de número da casa é obrigatório'),
   complemento: yup.string(),
@@ -51,6 +53,7 @@ const schema = yup.object().shape({
 
 const Register = () => {
 
+ 
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<UserFormData>({
     resolver: yupResolver(schema),
@@ -82,91 +85,90 @@ const Register = () => {
     }
   };
 
+
+
   return (
     <div className="screen-signup">
-  <h1>Cadastre-se</h1>
-   
-   <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="container-signup">
+    <h1>Cadastre-se</h1>
+
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="container-signup">
         <h2>Dados Pessoais</h2>
-          <div className="container-personal-data">
+        <div className="container-personal-data">
 
-            <div>
-              <label>Nome Completo</label>
-          <input type="text" aria-label="Inisra seu nome completo" {...register('username',  { required: true })} />
-          {errors.username && <span>Insira o nome completo</span>}
-            </div>
-          
-<div>
-  <label>E-mail</label>
-          <input type="email" aria-label="Insira o seu e-mail" placeholder="exemplo@exemplo.com" {...register('email', { required: true })} />
-          {errors.email && <span>Campo obrigatório</span>}
-</div>
-          
-<div>
-  <label>CPF</label>
-          <input type="text" placeholder="00000000000" aria-label="Insira seu CPF sem traços ou pontos" {...register('cpf', { required: true })} />
-          {errors.cpf && <span>Campo obrigatório</span>}
-</div>            
-        
+          <div>
+            <label>Nome Completo</label>
+            <input type="text" aria-label="Inisra seu nome completo" {...register('username', { required: true })} />
+            {errors.username && <span>Insira o nome completo</span>}
+          </div>
+
+
+          <div>
+            <label>E-mail</label>
+            <input type="email" aria-label="Insira o seu e-mail" placeholder="exemplo@exemplo.com" {...register('email', { required: true })} />
+            {errors.email && <span>Digite um email válido</span>}
+          </div>
+
+
+          <div>
+            <label>CPF</label>
+            <input type="text" placeholder="00000000000" aria-label="Insira seu CPF sem traços ou pontos" {...register('cpf', { required: true })} />
+            {errors.cpf && <span>Digite sem pontos e hífen</span>}
+          </div>
+
+
+          <div>
+            <label>Senha</label>
+            <input type="password" aria-label="Insira a senha" {...register('password', { required: true })} />
+            {errors.password && <span>A senha deve ter caracteres e números</span>}
+          </div>
+
+        </div>
+
+        <hr />
+
+        <h2>Endereço</h2>
+
         <div>
-          <label>Senha</label>
-          <input type="password" aria-label="Insira a senha" {...register('password', { required: true })} />
-          {errors.password && <span>A senha deve ter caracteres e números</span>}
-        </div>
-          
+
+          <div>
+            <label>Cep</label>
+            <input type="text" placeholder="00000000" aria-label="Insira o Cep de onde você mora" {...register('cep', { required: true })} />
+            {errors.cep && <span>Digite sem hífen</span>}
+          </div>
+
+          <div>
+            <label>Cidade</label>
+            <input type="text" aria-label="Insira a cidade a onde você reside" {...register('cidade', { required: true })} />
+            {errors.cidade && <span>Campo obrigatório</span>}
           </div>
 
 
-<hr />
-
-   <h2>Endereço</h2>
-
-
-<div>
-         
-<div>
-<label>Cep</label>
-          <input type="text" placeholder="00000000" aria-label="Insira o Cep de onde você mora" {...register('cep', { required: true })} />
-          {errors.cep && <span>Campo obrigatório, digite de forma correta</span>}
-</div>
-       
-       <div>
-       <label>Cidade</label>
-          <input type="text" aria-label="Insira a cidade a onde você reside" {...register('cidade', { required: true })} />
-          {errors.cidade && <span>Digite um nome de cidade válido</span>}
-       </div>
-
-          
-<div>
-<label>Rua</label>
-          <input type="string" aria-label="Rua a onde você mora" {...register('rua', { required: true })} />
-          {errors.rua && <span>Campo obrigatório</span>}
-
-</div>
-          
-
-<div>
- <label>Numero</label>
-          <input type="number" aria-label="insira o numero de sua residencia" {...register('numero', { required: true })} />
-          {errors.numero && <span>Campo obrigatório</span>}
-
-</div>
-         
-
-<div>
- <label>Complemento</label>
-          <input type="text" aria-label="Insira um complemento caso necessário" {...register('complemento', { required: true })} />
-         
-
-</div>
-         
+          <div>
+            <label>Rua</label>
+            <input type="string" aria-label="Rua a onde você mora" {...register('rua', { required: true })} />
+            {errors.rua && <span>Campo obrigatório</span>}
           </div>
-          <button type="submit" aria-label="Botão Registrar" className="btn-submite">Registrar</button>
+
+
+          <div>
+            <label>Numero</label>
+            <input type="number" aria-label="insira o numero de sua residencia" {...register('numero', { required: true })} />
+            {errors.numero && <span>Campo obrigatório</span>}
+          </div>
+
+
+          <div>
+            <label>Complemento</label>
+            <input type="text" aria-label="Insira um complemento caso necessário" {...register('complemento', { required: true })} />
+          </div>
+
         </div>
-        
-      </form>
-    </div>
+        <button type="submit" aria-label="Botão Registrar" className="btn-submite">Registrar</button>
+      </div>
+
+    </form>
+  </div>
   );
 }
 
