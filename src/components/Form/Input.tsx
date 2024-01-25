@@ -11,7 +11,7 @@ interface InputProps {
 
 function Input({ type, text, name, placeholder, handleChange, value }: InputProps) {
   return (
-    <div>
+    <div className='input-component'>
       <label htmlFor={name}>{text}</label>
       <input
         type={type}

@@ -1,9 +1,40 @@
 import "./Login.css"
-// import "../../App.css"
+
 import { Link } from 'react-router-dom';
+import Input from "../../components/Form/Input";
+import SubmitButton from "../../components/Form/SubmitButton/SubmitButton";
+
+import { useState } from "react";
 
 
 function Login() {
+
+
+
+
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSenhaChange = (e) => {
+    setSenha(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Aqui você pode realizar a lógica de submissão do formulário
+    console.log('Email:', email);
+    console.log('Senha:', senha);
+  };
+
+
+
+
+
   return (
     <section>
     <div className="container-login">
@@ -20,13 +51,23 @@ function Login() {
 <form action="" method="post">
 <h2>Login</h2>
 
-    <label htmlFor="email">E-mail:</label>
-    <input type="email" id="email" name="email" required />
+<Input
+        type="email"
+        text="E-mail"
+        name="email"
+        placeholder="exemplo@email.com"
+        handleChange={handleEmailChange}
+        value={email}
+      />
 
-    <label htmlFor="password">Senha:</label>
-    <input type="password" id="password" name="password" required />
-
-    <button type="submit">Login</button>
+      <Input
+        type="password"  
+        text="Senha"
+        name="senha"
+        handleChange={handleSenhaChange}
+        value={senha}
+      />
+   
 
    <p>Ainda não tem cadastro? <Link className="link-signup" to="/signup">Cadastre-se! </Link></p>
 </form>
