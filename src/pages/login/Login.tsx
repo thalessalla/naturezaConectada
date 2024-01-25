@@ -46,7 +46,7 @@ const schema = yup.object().shape({
 
 
   return (
-    <section>
+    <section className="section-login">
     <div className="container-login">
 
       <div className="first-column-login">

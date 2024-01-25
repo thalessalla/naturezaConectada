@@ -1,9 +1,5 @@
-import { useState, useEffect } from "react";
+
 import "./Signup.css"
-import Input from "../../components/Form/Input"
-import { ChangeEvent } from "react";
-import React from 'react';
-import SubmitButton from "../../components/Form/SubmitButton/SubmitButton";
 import { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import axios, { AxiosResponse } from 'axios';
@@ -164,7 +160,10 @@ const Register = () => {
           </div>
 
         </div>
-        <button type="submit" aria-label="Botão Registrar" className="btn-submite">Registrar</button>
+        <div>
+         <button type="submit" aria-label="Botão Registrar" className="btn-submite">Registrar</button> 
+        </div>
+        
       </div>
 
     </form>
