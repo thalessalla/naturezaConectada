@@ -121,3 +121,42 @@ input::placeholder{
 .btn-submite:hover{
   background-color: var(--accent-color);
 }
+
+
+
+
+/* ////// MENU ////// */
+
+.menu-container-web{
+  background-color: var(--text-color) !important;
+}
+
+.menu-item{
+  gap: 2rem;
+  display: flex;
+ align-items: baseline;
+  p{
+    color: var(--bg-color);
+     margin-top: .4rem;
+     transition: color .3s;
+  }
+  p:hover{
+    color: #226405;
+  }
+}
+
+@media (max-width: 600px){
+  .menu-item{
+    flex-direction: column;
+    gap: 0;
+    margin-left: 1rem;
+    display: block;
+    p{
+      color: var(--primary-color);
+      margin-top: 0;
+    }
+    .containerLogo  {
+      margin: 2rem 0;
+    }
+  }
+}

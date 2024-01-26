@@ -1,6 +1,6 @@
 
 
-.section-login section{
+.section-login {
   min-height: 100vh;
   display: flex;
   justify-content: center;

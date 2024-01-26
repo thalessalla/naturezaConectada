@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 3.2rem;
 }
 .screen-signup h1{
   color: var(--primary-color);
