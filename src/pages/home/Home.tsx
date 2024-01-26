@@ -6,10 +6,9 @@ import Planet from '../../assets/3d-planet.webp';
 import Ecology from '../../assets/ecology-hand.webp';
 import Laptop from '../../assets/laptop.webp';
 import Leaves from '../../assets/leaves.webp';
-import Plant from '../../assets/plant.png';
 import LogoTipo from '../../assets/logomarca.svg';
 import Arrow from '../../assets/seta.svg';
-import Footer from '../../components/footer/Footer';
+
 
 
 function Home() {
