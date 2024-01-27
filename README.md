@@ -31,10 +31,32 @@ Conectando pessoas à natureza, uma semente por vez.
 ## Banco de Dados 
 
 Estamos utilizando o *json-server* portanto para que seja possível testar o formulário de cadastro e *login* se faz necessário rodar o comando `npm run backend`
+<hr>
+
+## Atualizações Task 04
+
+Para a task 04 nos concentramos em resolver questões levantadas na correção da task 03, que foram as seguintes: 
+<br>
+<br>
+* **Identação**;
+   - Descobrimos que a extensão *Prettier* não estava funcionando como deveria.
+* ***Imports* que não estavam sendo utilizados**;
+   - Excluímos os *imports* que não estavam sendo utilizados.
+* ***Padding* nos *inputs* de cadastro**;
+   - Aumentamos o *padding* tanto nos *inputs* de cadastro quanto na tela de *login*.
+* **Revisar mensagem de erro nos campos dos formulários**;
+   - Melhoramos as mensagens de erro deixando-as mais informativas.
+* **Formulário de *login* *logando* sem consultar os dados na *API***;
+   - Modificamos a lógica para que a mesma apresentasse o comportamento esperado.
+<br>
+
+  Além destas modificações conseguimos utilizar o *MaterialUI* e implementamos o *menu hamburguer*.
+  
+<hr>
 
 ## Rotas 
 
-Ao se cadastrar ou efetuar o login, o usuário ainda não é direcionado para a *Userpage* (página de usuário), porq ue ainda não aprendemos sobre rotas privadas. Porém, o usuário recebe uma confirmação visual através de um alerta (*alert*).
+Ao se cadastrar ou efetuar o login, o usuário ainda não é direcionado para a *Userpage* (página de usuário), porque ainda não aprendemos sobre rotas privadas. Porém, o usuário recebe uma confirmação visual através de um alerta (*alert*).
 
 ## Responsividade
 
