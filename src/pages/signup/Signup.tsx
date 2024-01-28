@@ -1,4 +1,3 @@
-
 import "./Signup.css"
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
@@ -56,6 +55,8 @@ const Register = () => {
   });
 
   const [error, setError] = useState<string>('');
+  const [isFetchingCep, setIsFetchingCep] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); 
 
   const { register, handleSubmit, formState: { errors }, reset }: UseFormReturn<UserFormData> = useForm<UserFormData>({
   resolver: yupResolver(buildSchema()),
@@ -72,16 +73,14 @@ const handleCepChange = async (cep: string) => {
   try {
     
     setError('');
+    setIsFetchingCep(true);
 
     const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
 
-    if (response.data.erro) {
-     
+    if (response.data.erro) {     
       setError('CEP não encontrado. Digite um CEP válido.');
-    } else {
-     
+    } else {     
       const { localidade, logradouro, uf, ...otherAddressData } = response.data;
-
       const sanitizedAddress = {
         cidade: localidade || '',
         rua: logradouro || '',
@@ -95,31 +94,36 @@ const handleCepChange = async (cep: string) => {
   } catch (error) {
     console.error('Erro ao buscar dados do endereço:', error);
     setError('Ocorreu um erro ao buscar o endereço. Tente novamente mais tarde.');
+  }finally {
+    setIsFetchingCep(false);
   }
 };
 
   const onSubmit: SubmitHandler<UserFormData> = async (data) => {
     try {
+       if (isSubmitting) {
+        return; 
+      }
+
+      setIsSubmitting(true);
       const cpfCheck = await axios.get(`http://localhost:3001/users?cpf=${data.cpf}`);
       const emailCheck = await axios.get(`http://localhost:3001/users?email=${data.email}`);
 
       if (cpfCheck.data.length > 0) {
         alert('CPF já cadastrado');
-        return;
-      }
-
-      if (emailCheck.data.length > 0) {
+      } else if (emailCheck.data.length > 0) {
         alert('E-mail já cadastrado');
-        return;
+      } else {
+        const response: AxiosResponse<UserRegistrationResponse> = await axios.post('http://localhost:3001/users', data);
+        console.log('User registered with ID:', response.data.id);
+        alert('User cadastrado\n\nBem-vindo à área do usuário');
+
+        reset();
       }
-
-      const response: AxiosResponse<UserRegistrationResponse> = await axios.post('http://localhost:3001/users', data);
-      console.log('User registered with ID:', response.data.id);
-      alert('User cadastrado\n\nBem-vindo à área do usuário');
-
-      reset();
-    } catch (error) {
+   } catch (error) {
       console.error('User não cadastrado');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -133,20 +137,20 @@ const handleCepChange = async (cep: string) => {
           <div className="container-personal-data">
            <div>
              <label>Nome Completo</label>
-             <input type="text" aria-label="Inisra seu nome completo" {...register('username', { required: true })} />
+             <input type="text" aria-label="Inisra seu nome completo" {...register('username', { required: true })} maxLength={60}/>
              {errors.username && <span>Insira o nome completo</span>}
            </div>
 
            <div>
             <label>E-mail</label>
-             <input type="email" aria-label="Insira o seu e-mail" placeholder="exemplo@exemplo.com" {...register('email', { required: true })} />
+             <input type="email" aria-label="Insira o seu e-mail" placeholder="exemplo@exemplo.com" {...register('email', { required: true })} maxLength={60} />
              {errors.email && <span>Digite um email válido</span>}
            </div>
 
 
            <div>
              <label>CPF</label>
-             <input type="text" placeholder="00000000000" aria-label="Insira seu CPF sem traços ou pontos" {...register('cpf', { required: true })} />
+             <input type="text" placeholder="00000000000" aria-label="Insira seu CPF sem traços ou pontos" {...register('cpf', { required: true })} maxLength={11} />
              {errors.cpf && <span>Digite sem pontos e hífen</span>}
            </div>
 
@@ -173,13 +177,13 @@ const handleCepChange = async (cep: string) => {
             <div>
               <label>Cidade</label>
               <input type="text" aria-label="Insira a cidade a onde você reside" {...register('cidade', { required: true })} value={addressData.cidade} />
-              {errors.cidade && <span>Campo obrigatório</span>}
+              {/* {errors.cidade && <span>Campo obrigatório</span>} */}
             </div>
 
             <div>
               <label>Rua</label>
               <input type="text" aria-label="Rua a onde você mora" {...register('rua', { required: true })} value={addressData.rua} />
-              {errors.rua && <span>Campo obrigatório</span>}
+              {/* {errors.rua && <span>Campo obrigatório</span>} */}
             </div>
 
             <div>
@@ -190,17 +194,18 @@ const handleCepChange = async (cep: string) => {
 
             <div>
               <label>Complemento</label>
-              <input type="text" aria-label="Insira um complemento caso necessário" {...register('complemento', { required: true })} />
+              <input type="text" aria-label="Insira um complemento caso necessário" {...register('complemento', { required: true })} maxLength={30} />
             </div>
 
             <div>
               <label>UF</label>
               <input type="text" aria-label="Estado onde você mora" {...register('uf', { required: true })} value={uf} />
-              {errors.uf && <span>Campo obrigatório</span>}
+              {/* {errors.uf && <span>Campo obrigatório</span>} */}
             </div>
           </div>
 
           <div>
+            {/* <button type="submit" aria-label="Botão Registrar" className="btn-submite" disabled={isFetchingCep || isSubmitting}></button> */}
             <button type="submit" aria-label="Botão Registrar" className="btn-submite">Registrar</button>
           </div>
         </div>
