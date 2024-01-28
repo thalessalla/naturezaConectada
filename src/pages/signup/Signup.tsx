@@ -55,6 +55,8 @@ const Register = () => {
     uf: '',
   });
 
+  const [error, setError] = useState<string>('');
+
   const { register, handleSubmit, formState: { errors }, reset }: UseFormReturn<UserFormData> = useForm<UserFormData>({
   resolver: yupResolver(buildSchema()),
 });
@@ -63,25 +65,38 @@ const Register = () => {
       handleCepChange(addressData.cep);
     }
   }, [addressData]);
-  
+ 
 const [uf, setUf] = useState<string>('');
-  const handleCepChange = async (cep: string) => {
-    try {
-      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+
+const handleCepChange = async (cep: string) => {
+  try {
+    
+    setError('');
+
+    const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+
+    if (response.data.erro) {
+     
+      setError('CEP não encontrado. Digite um CEP válido.');
+    } else {
+     
       const { localidade, logradouro, uf, ...otherAddressData } = response.data;
 
-      setAddressData({
-        cidade: localidade,
-        rua: logradouro,
-        uf: uf,
+      const sanitizedAddress = {
+        cidade: localidade || '',
+        rua: logradouro || '',
+        uf: uf || '',
         ...otherAddressData,
-      });
+      };
 
-      setUf(uf);
-    } catch (error) {
-      console.error('Erro ao buscar dados do endereço:', error);
+      setAddressData(sanitizedAddress);
+      setUf(uf || '');
     }
-  };
+  } catch (error) {
+    console.error('Erro ao buscar dados do endereço:', error);
+    setError('Ocorreu um erro ao buscar o endereço. Tente novamente mais tarde.');
+  }
+};
 
   const onSubmit: SubmitHandler<UserFormData> = async (data) => {
     try {
@@ -150,8 +165,9 @@ const [uf, setUf] = useState<string>('');
             <div>
             <label>Cep</label>
              <input type="text" placeholder="00000000" aria-label="Insira o Cep de onde você mora" {...register('cep', { required: true })} 
-  onBlur={(e) => handleCepChange(e.target.value)} />
+  onBlur={(e) => handleCepChange(e.target.value)} maxLength={8} />
              {errors.cep && <span>Digite sem hífen</span>}
+             {error && <span>{error}</span>}
            </div>
 
             <div>
