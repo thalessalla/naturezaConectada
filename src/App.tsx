@@ -8,6 +8,10 @@ import Signup from './pages/signup/Signup';
 import UserPage from './pages/userPage/UserPage';
 import Footer from './components/footer/Footer';
 import Nav from './components/navBar/NavBar';
+import Confirmation from './pages/confirmation/Confirmation';
+import Config from './pages/config/Config';
+import PlantsList from './pages/result/Result';
+import AdminPage from './pages/adminPage/AdminPage';
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/userpage" element={<UserPage />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/config" element={<Config />} />
+        <Route path="/resultado" element={<PlantsList />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
 
 <Footer />

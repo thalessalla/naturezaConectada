@@ -270,5 +270,40 @@
       "password": "o123",
       "username": "Teste Oito"
     }
+  ],
+
+  "mudas": [
+
+    {
+      "ID_Muda": "1",
+      "Tipo_Muda": "Árvore",
+      "Nome": "Ipê Amarelo",
+      "Nome_Cientifico": "Handroanthus albus",
+      "Porte": "Grande",
+      "Descrição": "O ipê-amarelo é uma árvore nativa da Mata Atlântica.",
+      "ECOSSISTEMA": "Floresta Tropical",
+      "QUANTIDADE": "10"
+  },
+  {
+    "ID_Muda": "2",
+    "Tipo_Muda": "Árvore",
+    "Nome": "Jacarandá",
+    "Nome_Cientifico": "Jacaranda mimosifolia",
+    "Porte": "Médio",
+    "Descrição": "O jacarandá é uma árvore ornamental conhecida por suas flores roxas.",
+    "ECOSSISTEMA": "Cerrado",
+    "QUANTIDADE": "15"
+},
+{
+  "ID_Muda": "3",
+  "Tipo_Muda": "Arbusto",
+  "Nome": "Pata-de-vaca",
+  "Nome_Cientifico": "Bauhinia variegata",
+  "Porte": "Pequeno",
+  "Descrição": "A pata-de-vaca é uma planta ornamental com flores brancas.",
+  "ECOSSISTEMA": "Caatinga",
+  "QUANTIDADE": "20"
+}
+
   ]
 }
