@@ -21,8 +21,8 @@ function Home() {
             <img src={LogoTipo} alt="Logomarca da Natureza Conectada. Ilustração de uma folha e ao lado direito escrito: Natureza Conectada" />
             <p>Conectando pessoas à natureza, uma semente por vez.</p>
             <Link to="/signup" aria-label="Botão cadastre-se">
-  <a className="btn-cta hero-section-button" href="">Cadastre-se</a>
-</Link>
+            <a className="btn-cta hero-section-button">Cadastre-se</a>
+            </Link>
             <img src={Arrow} alt="Seta mostrando que a landing page contem mais conteúdo para baixo" className="arrow-scroll" loading="lazy" />
         </div>
     </main>

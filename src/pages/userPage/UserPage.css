@@ -52,6 +52,7 @@ main > section {
   text-align: center;
   color: var(--primary-color);
   margin-bottom: 5rem;
+  margin-top: 1rem;
 }
 .cards-benefits .card-body h3 {
   color: var(--primary-color);
@@ -65,7 +66,7 @@ main > section {
   /* font-weight: 600; */
 }
 .cards-benefits .card {
-  max-height: 19rem;
+  max-height: 21rem;
   padding: 1rem;
   padding-left: 3rem;
   border-radius: 0.3rem;
@@ -73,7 +74,7 @@ main > section {
   border-left: 2px solid #eeeeee;
   background: #f9fcf9 !important;
   box-shadow: 3px 8px 10.1px 0px rgba(0, 0, 0, 0.079);
-  width: 20rem;
+  width: 18rem;
   min-height: 19rem;
 }
 .cards-benefits .card:last-child {
@@ -147,10 +148,10 @@ main > section {
   background-image: url("../../assets/comunidade.svg");
 }
 
-.button-ask:disabled {
+/* .button-ask:disabled {
   opacity: 0.8;
   cursor: not-allowed;
-}
+} */
 
 footer .links {
   visibility: hidden;
@@ -164,9 +165,7 @@ footer .links {
     display: flex;
     flex-direction: column;
   }
-  .cards-benefits h2 {
-    margin-inline: 2rem;
-  }
+
   .ask-for-seed {
     flex-wrap: wrap;
   }
@@ -176,5 +175,16 @@ footer .links {
   footer .links {
     display: none;
   }
+  .card-usuario{
+    margin-top: 4rem;
+  }
 }
 
+
+@media(max-width: 540px){
+  .cards-benefits h2 {
+    margin-inline: 2rem;
+    margin-top: 2rem;
+    margin-bottom: .4rem;
+  }
+}
