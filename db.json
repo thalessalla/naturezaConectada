@@ -269,6 +269,19 @@
       "email": "testeoito@teste.com",
       "password": "o123",
       "username": "Teste Oito"
+    },
+    {
+      "id": "9da4",
+      "uf": "SP",
+      "complemento": "",
+      "numero": 52,
+      "rua": "Rua Santa Clara",
+      "cidade": "Itapevi",
+      "cep": "06654300",
+      "cpf": "11112222222",
+      "email": "camila@teste.com",
+      "password": "o123",
+      "username": "Camila Nazaré"
     }
   ],
 
