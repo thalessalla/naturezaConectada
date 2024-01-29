@@ -1,17 +1,31 @@
 
 import "./UserPage.css"
-
+import { UserType } from './UserTypes';
 import sustainability from "../../assets/sustainability.webp"
 import Plant from '../../assets/plant.png';
+import { Link } from 'react-router-dom';
 
+interface UserPageProps {
+  user: UserType | null;
+  onLogout: () => void;
+}
 
-function UserPage() {
+function UserPage({ user, onLogout }: UserPageProps) {
+     console.log('User in UserPage:', user);
+  if (user === null) {
+    return null;
+  }
+
+  const { username } = user;
+
   return (
     <main>
+       
     <section>
         <div className="card-usuario">
+            
             <div>
-                <h1>Olá Carlos!</h1>
+                <h1>{username}</h1>
                 <p>Seja bem-vindo(a) à nossa comunidade comprometida com a Natureza. Estamos ansiosos para compartilhar conquistas, aprendizados e o impacto positivo que, juntos, podemos alcançar.</p>
                 
             </div>
@@ -69,13 +83,14 @@ function UserPage() {
             <h2>Pedir sua semente</h2>
             <button className="btn-cta button-ask" disabled aria-label="Botão de chamada para pedir uma semente">Pedir
             </button>
+            <Link to="/config">
+            <button className="btn-cta button-ask" aria-label="Botão de chamada para configurar Perfil ">Configurar Perfil
+            </button></Link>
         </div>
         <img src={Plant} alt="Figura de uma planta de decoração em um jarro" />
     </section>
 
-
 </main>
   );
 }
-
 export default UserPage;

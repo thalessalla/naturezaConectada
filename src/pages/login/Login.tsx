@@ -5,7 +5,11 @@ import axios from 'axios';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { UserType }  from '../userPage/UserTypes'
 
+interface LoginProps {
+  onLogin: (userData: UserType) => void;
+}
 interface FormData {
   email: string;
   password: string;
@@ -19,7 +23,7 @@ const schema = yup.object().shape({
 
 
 
-  const Login = () => {
+  const Login = ({ onLogin }: LoginProps) => {
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
       resolver: yupResolver(schema),
@@ -32,8 +36,10 @@ const schema = yup.object().shape({
 
         if (passwordCheck.data.length > 0 && emailCheck.data.length > 0) {
           console.log('Login com sucesso:');
-          alert("Olá, seja bem-vindo!");
+          // alert("Olá, seja bem-vindo!");
+          onLogin(emailCheck.data[0]);
           navigate('/userPage');
+          console.log(data.email);
         } else {
          
           alert("Credenciais invalidas")
