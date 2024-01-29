@@ -83,10 +83,10 @@ function UserPage({ user, onLogout }: UserPageProps) {
 
     <section className="ask-for-seed" id="pedido">
         <div>
-            <h2>Pedir sua semente</h2>
-            <button className="btn-cta button-ask" disabled aria-label="Botão de chamada para pedir uma semente">Pedir
-            </button>
-           
+            <h2>Pedir sua muda</h2>
+            <Link to="/resultado">
+            <button className="btn-cta button-ask" aria-label="Botão de chamada para configurar Perfil ">Pedir
+            </button></Link>
         </div>
         <img src={Plant} alt="Figura de uma planta de decoração em um jarro" />
     </section>
