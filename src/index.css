@@ -127,8 +127,12 @@ input::placeholder{
 
 /* ////// MENU ////// */
 
+
+
+
 .menu-container-web{
   background-color: var(--text-color) !important;
+  padding-top: .4rem ;
 }
 
 .menu-item{

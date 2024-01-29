@@ -1,0 +1,84 @@
+
+.screen-signup{
+  max-width: 1200px;
+  margin: 0 auto;
+  h1{
+    font-size: 2rem;
+    border-bottom: #bababa solid 2px;
+    padding-bottom: .4rem;
+  }
+}
+
+.panel-content{
+  /* width: 60%; */
+}
+
+.screen-signup > div{
+ min-height: 500px;
+width:90%;
+ padding: 0 1.2rem;
+ filter: drop-shadow(3px 8px 10.1px rgba(0, 0, 0, 0.25));
+ background-color: #F9FCF9;
+ border-radius: 8px;
+ justify-content: space-around;
+ padding: 40px ;
+ margin-top: 5rem;
+ margin-bottom: 2rem;
+}
+
+.conatiner-grid-config{
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  gap: 2rem;
+}
+
+
+.container-butons-config{
+margin-bottom: 40px;
+display: flex;
+flex-direction: column;
+}
+
+.screen-signup h2{
+  margin-top: 0;
+}
+
+.btn-config-select {
+  background-color: #FFFFFF !important;
+  color: #3D3E3C;
+  border: solid 1px #E0E0E0;
+  margin: 4px 0;
+  text-align: start;
+  /* padding-left: 28px; */
+ width: 100%;
+ max-width: 150px;
+}
+
+.ph{
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 950px){
+  .container-butons-config{
+    padding-right: 0;
+    }
+}
+
+
+@media (max-width: 688px){
+  .conatiner-grid-config{
+    grid-template-columns: 1fr;
+    }
+    .screen-signup{
+      h1{
+        font-size: 1.4rem;
+      }
+    }
+    .screen-signup > div{
+      padding: 20px;
+    }
+    .container-butons-config{
+      margin-bottom: 0;
+    }
+}

@@ -56,7 +56,7 @@ export default function DrawerAppBar(props: Props) {
     <Box sx={{ display: 'flex' }} >
       <CssBaseline />
       <AppBar component="nav" className="menu-container-web">
-        <Toolbar>
+        <Toolbar className='teste-menu'>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -65,6 +65,7 @@ export default function DrawerAppBar(props: Props) {
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
+
           </IconButton>
           <Typography
             variant="h6"
