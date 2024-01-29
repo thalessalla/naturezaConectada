@@ -182,8 +182,8 @@ const handleCepChange = async (cep: string) => {
 
             <div>
               <label>Rua</label>
-              <input type="text" aria-label="Rua a onde você mora" {...register('rua', { required: true })} value={addressData.rua} />
-              {/* {errors.rua && <span>Campo obrigatório</span>} */}
+              <input type="text" aria-label="Rua a onde você mora" {...register('rua', { required: true })} maxLength={32} />
+              {errors.rua && <span>Campo obrigatório</span>}
             </div>
 
             <div>
