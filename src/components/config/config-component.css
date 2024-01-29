@@ -1,0 +1,112 @@
+/* 
+.component-config > div{
+width: 100%;
+}
+
+.container-input-config input{
+  width: 100%;
+}
+
+.container-config-personal{
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.container-config-personal > div{
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.container-config-end{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.container-input-config{
+  display: flex;
+  flex-direction: column;
+}
+
+.container-input-config > div{
+  width: 100%;
+}
+
+
+.btn-config{
+  padding: .4rem 2rem;
+  transition: background-color .3s;
+  background-color: var(--primary-color);
+}
+
+.btn-config:hover{
+  background-color: var(--accent-color);
+}
+
+
+@media (max-width: 638px){
+  .container-input-config{
+   width: 100%;
+  }
+  .container-config-personal > div{
+    gap: 0;
+  }
+  .container-config-end > div{
+    width: 100%;
+  }
+  .container-config-end {
+   gap: 0;
+}
+}
+
+@media (max-width: 400px){
+   
+
+
+  .btn-config{
+    width: 100% !important;
+    padding: .4rem 0;
+  }
+} */
+
+
+
+
+.container-input-config{
+  display: flex;
+  flex-direction: column;
+  margin-top: .6rem;
+  input{
+    width: 100%;
+  }
+}
+
+.container-config-personal{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container-config-end{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+@media (max-width: 550px){
+  .container-config-personal{
+    grid-template-columns: 1fr;
+  }
+  
+  .container-config-end{
+    grid-template-columns: 1fr; 
+  }
+  .btn-config{
+    width: 100% !important;
+  }
+}
