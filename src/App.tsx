@@ -12,6 +12,7 @@ import Confirmation from './pages/confirmation/Confirmation';
 import Config from './pages/config/Config';
 import PlantsList from './pages/result/Result';
 import AdminPage from './pages/adminPage/AdminPage';
+import ThankyouPage from './pages/thankyouPage/ThankyouPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/config" element={<Config />} />
         <Route path="/resultado" element={<PlantsList />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/obrigado" element={<ThankyouPage />} />
       </Routes>
 
 <Footer />
