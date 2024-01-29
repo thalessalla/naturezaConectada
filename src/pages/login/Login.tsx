@@ -1,11 +1,10 @@
 import "./Login.css"
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-
 
 interface FormData {
   email: string;
@@ -21,6 +20,7 @@ const schema = yup.object().shape({
 
 
   const Login = () => {
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
       resolver: yupResolver(schema),
     });
@@ -33,6 +33,7 @@ const schema = yup.object().shape({
         if (passwordCheck.data.length > 0 && emailCheck.data.length > 0) {
           console.log('Login com sucesso:');
           alert("Olá, seja bem-vindo!");
+          navigate('/userPage');
         } else {
          
           alert("Credenciais invalidas")
@@ -41,9 +42,6 @@ const schema = yup.object().shape({
         console.error('Login falhou:', error);
       }
     };
-
-
-
 
   return (
     <section className="section-login">
