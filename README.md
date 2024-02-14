@@ -33,6 +33,86 @@ Conectando pessoas à natureza, uma semente por vez.
 Estamos utilizando o *json-server* portanto para que seja possível testar o formulário de cadastro e *login* se faz necessário rodar o comando `npm run backend`
 <hr>
 
+
+## Atualizações Task 05
+
+Até o presente momento estamos usando o *db.json* para rodar algumas funcionalidades, portanto para que seja possível vizualizar/acessar todas as funcionalidades implementadas pelo *Vercel* se faz necessário clonar o repositório, instalar as dependências e rodar o banco de dados utilizando o comando `npm run backend`
+
+Obs: *UserPage* - área logada.
+
+Atualizações nas telas que já estavam prontas:
+
+* [Cadastre-se](https://natureza-conectada-cup7.vercel.app/signup) - Tela dedicada ao usuário.
+  - Nesta tela, é possível realizar o cadastro do usuário (Lembrando que para funcionar é necessário rodar o banco de dados);
+      * Funcionalidades:
+        - Os *inputs* dedicados para a **Cidade**, **Rua** e **UF** são preenchidos automaticamente após ser preenchido o campo **CEP**, pois estamos consumindo a *API viaCep*; 
+        - Após ser cadastrado, é apresentada um *alert* dando as boas vindas à aplicação. (Não foi implementado o redirecionamento, porque estava interferindo no funcionamento do cadastro);
+       
+  - Todos os *inputs* possuem verificação e limite de caracteres.
+            
+    Esta página é acessada através do *Header* em **Cadastre-se**, e também pelo botão **Cadastre-se** na *Home*.
+
+* [Login](https://natureza-conectada-cup7.vercel.app/login) - Tela dedicada ao usuário.
+  - Aqui o usuário cadastrado pode efetuar o *login* (Lembrando que para funcionar é necessário rodar o banco de dados);
+       * Funcionalidades:
+          - Após digitar o endereço de *email* e a *senha* que foram cadastrados na tela **Cadastre-se**, o usuário é direcionado para a área logada - *UserPage*.
+        
+<hr>
+
+Foram criadas as seguinte páginas:
+
+* [UserPage](https://natureza-conectada-cup7.vercel.app/userPage) - Tela dedicada ao usuário.
+  - Nesta tela, damos as boas-vindas para os usuários;
+  - O nome do usuário é renderizado dinâmicamente a partir do *login* realizado;
+  - Configuramos o *tabIndex*.
+    
+       * Funcionalidades disponíveis:
+  - O usuário pode clicar no botão **Configurar Perfil**, ele será redirecionado para a página *Config*;
+  - Ao final da página clicando no botão **Pedir**, ele será redirecionado para a página **Resultado** onde poderá escolher a sua muda.
+ 
+    Esta página é acessada após realizar o *login*.
+ 
+* [Config](https://natureza-conectada-cup7.vercel.app/config) - Tela dedicada ao usuário.
+  - Criada para que o usuário possa editar seus dados e a sua senha, o formulário de editar dados conta com todas as verificações. No momento, encontra-se estática não sendo possível fazer uso dessa funcionalidade. Ela pode ser acessada através do link acima, ou pela navegação do site a partir da *UserPage* pelo botão **Configurar Perfil**.
+
+* [Resultado](https://natureza-conectada-cup7.vercel.app/resultado) - Tela dedicada ao usuário.
+  - Criada com o intuito de mostrar ao usuário quais as mudas indicadas para a sua região (Indicará sempre em 3 tamanhos).
+  - Esta página é renderizada a partir das informações contidas no banco de dados (neste  caso no *db.json*),
+  - Possui um botão em cada tipo de muda (*card*), com a funcionalidade de selecionar a muda que deseja. Após selecionar o botão muda a funcionalidade, sendo possível remover a seleção.
+  - Ao clicar em **Continuar** o usuário é redirecionado para a página de Confirmação.
+
+    * Funcionalidade prevista( ainda não implementada):
+  - O botão voltar levará o usuário para a página *UserPage*.  
+  
+A página de Resultado pode ser acessada através do link acima (lembrando que sem rodar o banco de dados, os cards não serão renderizados), ou pela navegação do site a partir do botão **Pedir** presente na *UserPage*.
+
+* [Confirmation](https://natureza-conectada-cup7.vercel.app/confirmation) - Tela dedicada ao usuário.
+  - Criada para que o usuário possa verificar e confirmar os dados do seu pedido.
+  - No momento encontra-se estática, porém as funcionalidades previstas para essa página são:
+     - Remover o item escolhido;
+     - Escolher o endereço onde será realizada a entrega.
+        
+  Funcionalidades que podem ser utilizadas no *Vercel*
+  - Voltar para a página de **Resultado** para escolher outras mudas;
+
+A página de Confirmação pode ser acessada através do link acima, ou pela navegação do site a partir da **Resultado** pelo botão **Continuar**.
+ 
+* [Obrigado](https://natureza-conectada-cup7.vercel.app/obrigado) - Tela dedicada ao usuário.
+  - Criada para agradecer o usuário por ter adquirido sua muda;
+  - Conta com a funcionalidade de retornar para a *Home*.
+
+    
+* [AdminPage](https://natureza-conectada-cup7.vercel.app/admin) - Tela dedicada ao Administrador.
+  - Criada para que o Administrador possa editar os dados dos usuários e informações das Mudas.
+  - É possível ver a lista de usuários e a lista de mudas disponíveis através dos botões localizados à esquerda na tela.
+
+     * Funcionalidades previstas( ainda não implementada):
+  - O administrador terá a possibilidade de ativar o endereço de entrega dos usuários indicando também o Ecossistema que aquele endereço pertence. Esta informação se faz importante porque é ela que irá definir as mudas que serão renderizadas para os usuários na tela **Resultado**;
+  - Para as mudas, será possível mudar seu *status* para ativa(disponível) ou inativa(indisponível);
+
+     No momento esta tela está estática e o seu acesso se faz somente pelo link. 
+
+<hr>
 ## Atualizações Task 04
 
 Para a task 04 nos concentramos em resolver questões levantadas na correção da task 03, que foram as seguintes: 

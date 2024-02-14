@@ -1,6 +1,7 @@
 import "./Signup.css"
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { SubmitHandler, useForm, UseFormReturn } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -47,6 +48,7 @@ const buildSchema = () =>
     });
 
 const Register = () => {
+  const navigate = useNavigate();
   const [addressData, setAddressData] = useState<AddressData>({
     cep: '',
     cidade: '',
@@ -116,9 +118,10 @@ const handleCepChange = async (cep: string) => {
       } else {
         const response: AxiosResponse<UserRegistrationResponse> = await axios.post('http://localhost:3001/users', data);
         console.log('User registered with ID:', response.data.id);
-        alert('User cadastrado\n\nBem-vindo à área do usuário');
+        alert('Usuário cadastrado com sucesso!\n\nRealize o login na próxima página');
 
         reset();
+        navigate('/login');
       }
    } catch (error) {
       console.error('User não cadastrado');
@@ -182,8 +185,8 @@ const handleCepChange = async (cep: string) => {
 
             <div>
               <label>Rua</label>
-              <input type="text" aria-label="Rua a onde você mora" {...register('rua', { required: true })} value={addressData.rua} />
-              {/* {errors.rua && <span>Campo obrigatório</span>} */}
+              <input type="text" aria-label="Rua a onde você mora" {...register('rua', { required: true })} maxLength={32} />
+              {errors.rua && <span>Campo obrigatório</span>}
             </div>
 
             <div>

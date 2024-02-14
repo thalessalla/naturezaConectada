@@ -59,7 +59,7 @@ function Confirmation() {
             <div className="btn-voltar"><p>Voltar</p></div>
           </Link>
 
-          <Link to="/Confirmation">
+          <Link to="/obrigado">
             <div className="btn-continuar"><p>Continuar</p></div>
           </Link>  
       </div>
