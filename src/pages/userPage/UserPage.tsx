@@ -5,18 +5,19 @@ import sustainability from "../../assets/sustainability.webp"
 import Plant from '../../assets/plant.png';
 import { Link } from 'react-router-dom';
 
-interface UserPageProps {
-  user: UserType | null;
-  onLogout: () => void;
-}
+// interface UserPageProps {
+//   user: UserType | null;
+//   onLogout: () => void;
+// }
+// { user, onLogout }: UserPageProps
 
-function UserPage({ user, onLogout }: UserPageProps) {
-     console.log('User in UserPage:', user);
-  if (user === null) {
-    return null;
-  }
+function UserPage() {
+    //  console.log('User in UserPage:', user);
+//   if (user === null) {
+//     return null;
+//   }
 
-  const { username } = user;
+//   const { username } = user;
 
   return (
     <main>
@@ -25,7 +26,7 @@ function UserPage({ user, onLogout }: UserPageProps) {
         <div className="card-usuario">
             
             <div>
-                <h1>{username}</h1>
+                {/* <h1>{username}</h1> */}
                 <p>Seja bem-vindo(a) à nossa comunidade comprometida com a Natureza. Estamos ansiosos para compartilhar conquistas, aprendizados e o impacto positivo que, juntos, podemos alcançar.</p>
                 <Link to="/config">
             <button className="btn-cta button-ask" aria-label="Botão de chamada para configurar Perfil ">Configurar Perfil

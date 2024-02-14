@@ -16,27 +16,30 @@ import AdminPage from './pages/adminPage/AdminPage';
 import ThankyouPage from './pages/thankyouPage/ThankyouPage';
 
 function App() {
-  const [user, setUser] = useState<UserType | null>(null);
+  const [user, setUser] = useState<UserType | null>(null)
 
-  const handleLogin = (userData: UserType) => {
-    setUser(userData);
-  };
+  // const handleLogin = (userData: UserType) => {
+  //   setUser(userData);
+  //   console.log(userData)
+  // };
+  //  onLogin={handleLogin}
+  //user={user} onLogout={handleLogout}
 
   const handleLogout = () => {
-    setUser(null);
-    console.log('User in App:', user);
-  };
+    setUser(null)
+    console.log('User in App:', user)
+  }
 
   return (
     <Router>
-      <Nav  />
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route
           path="/userpage"
-          element={<UserPage user={user} onLogout={handleLogout} />}
+          element={<UserPage />}
         />
         <Route path="/confirmation" element={<Confirmation />} />
         <Route path="/config" element={<Config />} />
@@ -46,7 +49,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
-  );
+  )
 }
 
 export default App;
