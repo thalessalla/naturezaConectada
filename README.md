@@ -26,15 +26,36 @@ Conectando pessoas à natureza, uma semente por vez.
   <hr>
 </div>
 
-# Informações Importantes 
+## ìndice
+* [1. Banco de Dados](#1-banco-de-dados)
+* [2. Atualizações Task 03 - Redux](#2-atualizações-task-03---redux)
+    - [2.1 Informações sobre a API](#21-informações-sobre-a-api)
+* [3. Atualizações Task 05 - React](#3-atualizações-task-05---react)
+* [4. Atualizações Task 04](#4-atualizações-task-04)
+    - [4.1 Rotas](#41-rotas)
+    - [4.2 Responsividade](#42-responsividade)
+    - [4.3 Dados Lighthouse](#43-dados-lighthouse)
 
-## Banco de Dados 
+## 1. Banco de Dados 
 
 Estamos utilizando o *json-server* portanto para que seja possível testar o formulário de cadastro e *login* se faz necessário rodar o comando `npm run backend`
 <hr>
 
+## 2. Atualizações Task 03 - Redux
 
-## Atualizações Task 05
+O objetivo desta *task* é o refatoramento para *Redux RTK*.
+
+Para esta primeira parte refatoramos as telas de *login* e *cadastro* tendo em vista que a *Landing Page* não precisará de refatoramento.
+
+### 2.1 Informações sobre a *API*
+
+A equipe de *backend* desenvolveu uma *API* específica para o projeto, porém como ainda enfrenta problemas, neste primeiro momento optamos por ainda fazer uso do *db.json*.
+
+A documentação da *API* bem como seus *endpoints* podem ser acessados [clicando aqui.](http://vemser-dbc.dbccompany.com.br:39000/diuliano-vargas-silveira/vs13-squad5-natureza-conectada/swagger-ui/index.html#/)
+
+<hr>
+
+## 3. Atualizações Task 05 - React
 
 Até o presente momento estamos usando o *db.json* para rodar algumas funcionalidades, portanto para que seja possível vizualizar/acessar todas as funcionalidades implementadas pelo *Vercel* se faz necessário clonar o repositório, instalar as dependências e rodar o banco de dados utilizando o comando `npm run backend`
 
@@ -113,7 +134,8 @@ A página de Confirmação pode ser acessada através do link acima, ou pela nav
      No momento esta tela está estática e o seu acesso se faz somente pelo link. 
 
 <hr>
-## Atualizações Task 04
+
+## 4. Atualizações Task 04
 
 Para a task 04 nos concentramos em resolver questões levantadas na correção da task 03, que foram as seguintes: 
 <br>
@@ -134,16 +156,16 @@ Para a task 04 nos concentramos em resolver questões levantadas na correção d
   
 <hr>
 
-## Rotas 
+## 4.1 Rotas 
 
 Ao se cadastrar ou efetuar o login, o usuário ainda não é direcionado para a *Userpage* (página de usuário), porque ainda não aprendemos sobre rotas privadas. Porém, o usuário recebe uma confirmação visual através de um alerta (*alert*).
 
-## Responsividade
+## 4.2 Responsividade
 
 Todas as páginas são responsivas. 
 Para acessar a *userpage* se faz necessário realizar a rota manualmente através da barra do navegador ou [cliando aqui.](https://natureza-conectada-cup7.vercel.app/userpage)
 
-## Dados Lighthouse
+## 4.3 Dados Lighthouse
 
 Para alcançar os resultados reais, se faz necessário realizar o uso da ferramenta *Lighthouse* em **aba anônima**, abaixo os resultados alcançados:
 <br>
