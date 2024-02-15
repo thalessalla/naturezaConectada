@@ -1,10 +1,12 @@
-import "./Signup.css"
 import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { SubmitHandler, useForm, UseFormReturn } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../features/slice/signupSlice';
+import "./Signup.css"
 
 interface UserRegistrationResponse {
   id: number;
@@ -19,36 +21,38 @@ interface AddressData {
 }
 
 interface UserFormData {
-  username: string;
-  password: string;
-  email: string;
-  cpf: string;
-  cep: string;
-  cidade: string;
-  rua: string;
-  numero: number;
-  complemento?: string;
   uf: string;
+  complemento?: string;
+  numero: number;
+  rua: string;
+  cidade: string;
+  cep: string;
+  cpf: string;
+  email: string;
+  password: string;
+  username: string;
 }
+
 const buildSchema = () =>
-    yup.object().shape({
-      username: yup.string().required('Nome do usuário é obrigatório'),
-      password: yup
-        .string()
-        .required('Senha é obrigatória')
-        .matches(/^(?=.*[A-Za-z])(?=.*\d)/, 'A senha deve ter caracteres e números'),
-      email: yup.string().email('Digite um endereço de e-mail válido').required('O e-mail é obrigatório'),
-      cpf: yup.string().matches(/^\d{11}$/, 'Digite seu CPF corretamente').required('Campo obrigatório'),
-      cep: yup.string().matches(/^\d{8}$/, 'CEP inválido').required('Campo obrigatório'),
-      cidade: yup.string().required('Nome da Cidade é obrigatório'),
-      rua: yup.string().required('Campo de rua é obrigatório'),
-      numero: yup.number().required('Campo de número da casa é obrigatório'),
-      complemento: yup.string(),
-      uf: yup.string().required('Campo obrigatório'),
-    });
+  yup.object().shape({
+    username: yup.string().required('Nome do usuário é obrigatório'),
+    password: yup
+      .string()
+      .required('Senha é obrigatória')
+      .matches(/^(?=.*[A-Za-z])(?=.*\d)/, 'A senha deve ter caracteres e números'),
+    email: yup.string().email('Digite um endereço de e-mail válido').required('O e-mail é obrigatório'),
+    cpf: yup.string().matches(/^\d{11}$/, 'Digite seu CPF corretamente').required('Campo obrigatório'),
+    cep: yup.string().matches(/^\d{8}$/, 'CEP inválido').required('Campo obrigatório'),
+    cidade: yup.string().required('Nome da Cidade é obrigatório'),
+    rua: yup.string().required('Campo de rua é obrigatório'),
+    numero: yup.number().required('Campo de número da casa é obrigatório'),
+    complemento: yup.string(),
+    uf: yup.string().required('Campo obrigatório'),
+  });
 
 const Register = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [addressData, setAddressData] = useState<AddressData>({
     cep: '',
     cidade: '',
@@ -58,53 +62,53 @@ const Register = () => {
 
   const [error, setError] = useState<string>('');
   const [isFetchingCep, setIsFetchingCep] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false); 
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { register, handleSubmit, formState: { errors }, reset }: UseFormReturn<UserFormData> = useForm<UserFormData>({
-  resolver: yupResolver(buildSchema()),
-});
+    resolver: yupResolver(buildSchema()),
+  });
+
   useEffect(() => {
     if (addressData && addressData.cep) {
       handleCepChange(addressData.cep);
     }
   }, [addressData]);
- 
-const [uf, setUf] = useState<string>('');
 
-const handleCepChange = async (cep: string) => {
-  try {
-    
-    setError('');
-    setIsFetchingCep(true);
+  const [uf, setUf] = useState<string>('');
 
-    const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+  const handleCepChange = async (cep: string) => {
+    try {
+      setError('');
+      setIsFetchingCep(true);
 
-    if (response.data.erro) {     
-      setError('CEP não encontrado. Digite um CEP válido.');
-    } else {     
-      const { localidade, logradouro, uf, ...otherAddressData } = response.data;
-      const sanitizedAddress = {
-        cidade: localidade || '',
-        rua: logradouro || '',
-        uf: uf || '',
-        ...otherAddressData,
-      };
+      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
 
-      setAddressData(sanitizedAddress);
-      setUf(uf || '');
+      if (response.data.erro) {
+        setError('CEP não encontrado. Digite um CEP válido.');
+      } else {
+        const { localidade, logradouro, uf, ...otherAddressData } = response.data;
+        const sanitizedAddress = {
+          cidade: localidade || '',
+          rua: logradouro || '',
+          uf: uf || '',
+          ...otherAddressData,
+        };
+
+        setAddressData(sanitizedAddress);
+        setUf(uf || '');
+      }
+    } catch (error) {
+      console.error('Erro ao buscar dados do endereço:', error);
+      setError('Ocorreu um erro ao buscar o endereço. Tente novamente mais tarde.');
+    } finally {
+      setIsFetchingCep(false);
     }
-  } catch (error) {
-    console.error('Erro ao buscar dados do endereço:', error);
-    setError('Ocorreu um erro ao buscar o endereço. Tente novamente mais tarde.');
-  }finally {
-    setIsFetchingCep(false);
-  }
-};
+  };
 
   const onSubmit: SubmitHandler<UserFormData> = async (data) => {
     try {
-       if (isSubmitting) {
-        return; 
+      if (isSubmitting) {
+        return;
       }
 
       setIsSubmitting(true);
@@ -117,19 +121,21 @@ const handleCepChange = async (cep: string) => {
         alert('E-mail já cadastrado');
       } else {
         const response: AxiosResponse<UserRegistrationResponse> = await axios.post('http://localhost:3001/users', data);
-        console.log('User registered with ID:', response.data.id);
+        // console.log('User registered with ID:', response.data.id);
         alert('Usuário cadastrado com sucesso!\n\nRealize o login na próxima página');
 
         reset();
         navigate('/login');
+
+        // Dispatch da ação de login do usuário
+        dispatch(loginUser(data));
       }
-   } catch (error) {
+    } catch (error) {
       console.error('User não cadastrado');
     } finally {
       setIsSubmitting(false);
     }
   };
-
   return (
     <div className="screen-signup">
       <h1>Cadastre-se</h1>

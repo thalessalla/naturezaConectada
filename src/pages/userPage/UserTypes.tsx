@@ -1,7 +1,6 @@
 export interface UserType {
-  id: string;
   uf: string;
-  complemento: string;
+  complemento?: string;
   numero: number;
   rua: string;
   cidade: string;
